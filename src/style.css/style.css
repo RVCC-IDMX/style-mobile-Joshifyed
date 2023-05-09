@@ -1,0 +1,123 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+/* Apply a reset */
+/* Use normalize.css to add modern defaults */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+
+/* Declare custom properties */
+:root {
+  /* Colors */
+  --bg-color: #f8f8f8;
+  --text-color: #222;
+  --link-color: #0077c2;
+  --link-color-hover: #00a6ff;
+  
+  /* Font sizes */
+  --font-size-root: 16px;
+  --font-size-small: 14px;
+  --font-size-medium: 18px;
+  --font-size-large: 22px;
+  
+  /* Line heights */
+  --line-height-base: 1.5;
+  --line-height-heading: 1.2;
+}
+
+/* Apply default styles */
+html {
+  box-sizing: border-box;
+  font-size: var(--font-size-root);
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: var(--line-height-base);
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+  line-height: var(--line-height-heading);
+  margin: 0;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-color-hover);
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1024px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+nav {
+  background-color: var(--bg-color);
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  margin: 0;
+}
+
+nav a {
+  color: var(--text-color);
+  display: block;
+  padding: 1rem;
+}
+
+main {
+  padding-top: 1rem;
+}
+
+/* Fluid typography */
+@media (min-width: 320px) {
+  html {
+    font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1024 - 320)));
+  }
+}
+
+/* Hide skip link by default */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  z-index: 999;
+}
+
+/* Display skip link when focused */
+.skip-link:focus {
+  top: 0;
+}
+
+/* Accessibility */
+/* Increase line height for better readability */
+body, button, input, select, textarea {
+  line-height: var(--line-height-base);
+}
