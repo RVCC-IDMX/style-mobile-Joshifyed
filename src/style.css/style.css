@@ -1,123 +1,142 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
-/* Apply a reset */
-/* Use normalize.css to add modern defaults */
-@import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
-
-/* Declare custom properties */
+/* Custom Properties */
 :root {
-  /* Colors */
-  --bg-color: #f8f8f8;
-  --text-color: #222;
-  --link-color: #0077c2;
-  --link-color-hover: #00a6ff;
-  
-  /* Font sizes */
-  --font-size-root: 16px;
-  --font-size-small: 14px;
-  --font-size-medium: 18px;
-  --font-size-large: 22px;
-  
-  /* Line heights */
-  --line-height-base: 1.5;
-  --line-height-heading: 1.2;
-}
-
-/* Apply default styles */
-html {
-  box-sizing: border-box;
-  font-size: var(--font-size-root);
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
-}
-
-body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-family: 'Roboto', sans-serif;
-  font-size: 1rem;
-  line-height: var(--line-height-base);
-  margin: 0;
-  padding: 0;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold;
-  line-height: var(--line-height-heading);
-  margin: 0;
-}
-
-a {
-  color: var(--link-color);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--link-color-hover);
-}
-
-.container {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1024px;
-  padding-left: 1rem;
-  padding-right: 1rem;
-}
-
-nav {
-  background-color: var(--bg-color);
-  border-bottom: 1px solid #ddd;
-  margin-bottom: 1rem;
-}
-
-nav ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav li {
-  margin: 0;
-}
-
-nav a {
-  color: var(--text-color);
-  display: block;
-  padding: 1rem;
-}
-
-main {
-  padding-top: 1rem;
-}
-
-/* Fluid typography */
-@media (min-width: 320px) {
-  html {
-    font-size: calc(16px + (24 - 16) * ((100vw - 320px) / (1024 - 320)));
+    --main-font: 'Roboto', sans-serif;
+    --main-font-size: 18px;
+    --main-color: #333;
+    --background-color: #f9f9f9;
   }
-}
-
-/* Hide skip link by default */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  z-index: 999;
-}
-
-/* Display skip link when focused */
-.skip-link:focus {
-  top: 0;
-}
-
-/* Accessibility */
-/* Increase line height for better readability */
-body, button, input, select, textarea {
-  line-height: var(--line-height-base);
-}
+  
+  /* Reset/Normalize */
+  @import url('https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css');
+  
+  /* Global Styles */
+  html, body {
+    font-family: var(--main-font);
+    font-size: var(--main-font-size);
+    color: var(--main-color);
+    background-color: var(--background-color);
+  }
+  
+  a {
+    color: var(--main-color);
+  }
+  
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+  
+  /* Header */
+  header {
+    padding: 30px 0;
+  }
+  
+  h1 {
+    font-size: 32px;
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 24px;
+    margin: 0 0 10px;
+    line-height: 1.2;
+  }
+  
+  p {
+    margin: 0 0 10px;
+    line-height: 1.5;
+  }
+  
+  .link-github {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .link-github:hover {
+    background-color: #555;
+  }
+  
+  /* Navigation */
+  nav {
+    background-color: #eee;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 10px;
+  }
+  
+  nav li {
+    margin: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px;
+  }
+  
+  nav a:hover {
+    background-color: #ccc;
+  }
+  
+  /* Main Content */
+  main {
+    padding: 30px 0;
+  }
+  
+  .skip-link {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+  }
+  
+  .skip-link:focus {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+  
+  article h2 {
+    font-size: 28px;
+    margin: 0 0 20px;
+    line-height: 1.2;
+  }
+  
+  article p {
+    margin: 0 0 20px;
+    line-height: 1.5;
+  }
+  
+  blockquote {
+    margin: 0 0 20px;
+    border-left: 5px solid #333;
+    padding: 0 0 0 20px;
+  }
+  
+  /* List Styles */
+  ul {
+    list-style: disc;
+    margin: 0 0 20px;
+    padding: 0 0 0 20px;
+  }
+  
+  ul li {
+    margin: 0 0 5px;
+    line-height: 1.5;
+  }
+  
